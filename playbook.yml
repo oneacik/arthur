@@ -8,5 +8,38 @@
           - bind
           - httpd
           - mariadb-server
+          - snapd
         state: latest
-    
+    - name: start snapd
+      service:
+        name: httpd
+        state: stopped
+    - name: Create a symbolic link for snapd
+      file:
+        src: /var/lib/snapd/snap
+        dest: /snap
+        state: link
+    - name: Install hollywood
+      snap:
+        classic: true
+        name:
+          - hollywood
+  roles:
+  #    - bertvv.bind
+  vars:
+    bind_dnssec_enable: no
+    bind_zone_master_server_ip:
+      - '127.0.0.1'
+    bind_forwarders:
+      - '8.8.8.8'
+      - '8.8.4.4'
+    bind_zone_domains:
+      - name: 'hs3.pl'
+        hosts:
+          - name: squire
+            ip: 10.14.10.4
+        networks:
+          - '10.14.10'
+
+#ln -s /var/lib/snapd/snap /snap
+#
