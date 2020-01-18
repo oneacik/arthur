@@ -1,0 +1,19 @@
+- name: Install snapd
+  package:
+    name:
+      - snapd
+    state: latest
+- name: Start snapd
+  service:
+    name: snapd
+    state: started
+- name: Create a symbolic link for snapd
+  file:
+    src: /var/lib/snapd/snap
+    dest: /snap
+    state: link
+- name: Install hollywood
+  snap:
+    classic: true
+    name:
+      - hollywood
