@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: install good shit
-      dnf:
+      package:
         name:
           - npm
           - vim
