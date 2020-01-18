@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+    - name: install good shit
+      dnf:
+        name:
+          - npm
+          - vim
+          - bind
+          - httpd
+          - mariadb-server
+        state: latest
+    
