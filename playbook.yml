@@ -11,5 +11,3 @@
   roles:
     - snap
     - named
-#ln -s /var/lib/snapd/snap /snap
-#
