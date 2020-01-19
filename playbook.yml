@@ -5,10 +5,8 @@
         name:
           - npm
           - vim
-          - bind
           - httpd
           - mariadb-server
-          - snapd
         state: latest
   roles:
     - snap
