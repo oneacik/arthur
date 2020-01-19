@@ -1,0 +1,6 @@
+- name: Use role in loop
+  include_role:
+    name: ansible-role-bind
+    public: yes
+  vars:
+    host: '{{ansible_default_ipv4.address}}'
