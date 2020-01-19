@@ -12,11 +12,10 @@
         state: latest
   roles:
     - snap
-  #    - bertvv.bind
+    - ansible-role-bind
   vars:
-    bind_dnssec_enable: no
-    bind_zone_master_server_ip:
-      - '127.0.0.1'
+    bind_dnssec_validate: auto
+    bind_zone_master_server_ip: '10.14.10.63'
     bind_forwarders:
       - '8.8.8.8'
       - '8.8.4.4'
@@ -24,9 +23,12 @@
       - name: 'hs3.pl'
         hosts:
           - name: squire
-            ip: 10.14.10.4
+            ip: '10.14.10.4'
+          - name: dns
+            ip: '10.14.10.63'
         networks:
           - '10.14.10'
-
+        name_servers:
+          - dns
 #ln -s /var/lib/snapd/snap /snap
 #

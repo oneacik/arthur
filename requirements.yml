@@ -1,1 +1,3 @@
-- src: bertvv.bind
+- src: https://github.com/oneacik/ansible-role-bind
+  scm: git
+
