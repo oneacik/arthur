@@ -1,7 +1,4 @@
-- name: Set the policy for the INPUT chain to DROP
-  iptables:
-    chain: INPUT
-    policy: ACCEPT
+# This one should be executed as first role
 
 - name: Set the policy for the FORWARD chain to ACCEPT
   iptables:
@@ -66,3 +63,9 @@
       - INVALID
     jump: REJECT
     comment: Drop invalid connections.
+
+# make this last as I am scared that it can randomly fuck my connection during setup
+- name: Set the policy for the INPUT chain to DROP
+  iptables:
+    chain: INPUT
+    policy: DROP
