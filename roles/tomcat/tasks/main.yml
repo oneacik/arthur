@@ -1,0 +1,18 @@
+#/var/lib/tomcat/webapps
+
+- name: install good shit
+  package:
+    name:
+      - java-1.8.0-openjdk
+      - tomcat
+    state: latest
+
+- name: Download jenkins
+  get_url:
+    url: http://mirrors.jenkins.io/war/latest/jenkins.war
+    dest: /usr/share/tomcat
+
+- name: Start tomcat
+  service:
+    name: tomcat
+    state: restarted

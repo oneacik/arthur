@@ -9,5 +9,6 @@
           - mariadb-server
         state: latest
   roles:
+    - iptables
     - snap
     - named
