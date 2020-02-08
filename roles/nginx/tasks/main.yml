@@ -1,0 +1,20 @@
+
+- name: install nginx
+  package:
+    name:
+      - nginx
+    state: latest
+
+
+- name: upload vhosts
+  template:
+    src: ../templates/vhosts.j2
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Restart nginx
+  service:
+    name: nginx
+    state: restarted

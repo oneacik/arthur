@@ -12,3 +12,4 @@
     - firewalld
     - snap
     - named
+    - nginx

@@ -1,0 +1,4 @@
+servers:
+  - names:
+      - "random.pl"
+    port: "8080"
