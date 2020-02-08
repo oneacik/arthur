@@ -1,0 +1,22 @@
+#tomcat
+- firewalld:
+    port: 8080/tcp
+    permanent: yes
+    state: enabled
+
+#nginx
+- firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled
+
+#dns
+- firewalld:
+    port: 53/udp
+    permanent: yes
+    state: enabled
+
+- name: Update firewalld
+  service:
+    name: firewalld
+    state: restarted
