@@ -1,10 +1,8 @@
-
 - name: install nginx
   package:
     name:
       - nginx
     state: latest
-
 
 - name: upload vhosts
   template:
