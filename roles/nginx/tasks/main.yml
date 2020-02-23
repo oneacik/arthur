@@ -1,8 +1,16 @@
+
+
 - name: install nginx
   package:
     name:
       - nginx
     state: latest
+
+- name: Set selinux to allow proxy_pass
+  seboolean:
+    name: httpd_can_network_connect
+    state: yes
+    persistent: yes
 
 - name: upload vhosts
   template:

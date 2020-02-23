@@ -3,6 +3,6 @@ servers:
       - "random.pl"
     port: "8080"
   - names:
-      - "events.artur.at.hs3.pl"
+      - "events.arthur.at.hs3.pl"
+      - "events.ksidelta.com"
     port: "9001"
-

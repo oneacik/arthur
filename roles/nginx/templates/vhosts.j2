@@ -5,10 +5,8 @@ events {
 http {
 {% for server in servers %}
     server { # simple reverse-proxy
-        listen       80;
-        {% if server.names is defined %}
-        server_name  {% for server in server.names %}{{server}} {% endfor %};
-        {% endif %}
+        listen 80;
+        {% if server.names is defined %}server_name{% for server in server.names %}  {{server}}{% endfor %};{% endif %}
 
         location / {
             proxy_pass      http://127.0.0.1:{{server.port}};
