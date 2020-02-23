@@ -2,3 +2,7 @@ servers:
   - names:
       - "random.pl"
     port: "8080"
+  - names:
+      - "events.artur.at.hs3.pl"
+    port: "9001"
+

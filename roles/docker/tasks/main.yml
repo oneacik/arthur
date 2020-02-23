@@ -1,0 +1,22 @@
+- name: install docker
+  package:
+    name:
+      - docker
+
+- pip:
+    name: docker-py
+
+- name: Start docker
+  service:
+    name: tomcat
+    state: started
+
+
+- name: Start Event Monitor
+  docker_container:
+    name: myapplication
+    image: psuwala/event-display:1.0.0
+    state: started
+    recreate: yes
+    ports:
+     - "9001:3000"

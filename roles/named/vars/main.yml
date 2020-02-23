@@ -4,11 +4,13 @@ bind_forwarders:
   - '8.8.8.8'
   - '8.8.4.4'
 bind_zone_domains:
-  - name: 'hs3.pl'
+  - name: 'arthur.at.hs3.pl'
     hosts:
       - name: squire
         ip: '10.14.10.4'
       - name: dns
+        ip: '{{host}}'
+      - name: events
         ip: '{{host}}'
     name_servers:
       - dns
