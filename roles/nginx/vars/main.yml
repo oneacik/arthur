@@ -5,4 +5,5 @@ servers:
   - names:
       - "events.arthur.at.hs3.pl"
       - "events.ksidelta.com"
+      - "events.hs3.pl"
     port: "9001"
